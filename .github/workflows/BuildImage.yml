@@ -3,9 +3,9 @@ name: Build Image
 on: [push, pull_request_target, workflow_dispatch]
 
 env:
-  GITHUB_REPO: "linuxserver/docker-mods" #don't modify
-  ENDPOINT: "linuxserver/mods" #don't modify
-  BASEIMAGE: "jellyfin" #replace
+  GITHUB_REPO: "ranisalt/docker-mods" #don't modify
+  ENDPOINT: "ranisalt/mods" #don't modify
+  BASEIMAGE: "foldingathome" #replace
   MODNAME: "amd" #replace
 
 jobs:

@@ -2,7 +2,7 @@
 
 FROM scratch
 
-LABEL maintainer="PascalMinder"
+LABEL maintainer="ranisalt"
 
 # copy local files
 COPY root/ /

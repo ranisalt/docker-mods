@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-AMDGPU_RELEASE=${AMDGPU_RELEASE:-5.4.1}
+AMDGPU_RELEASE=${AMDGPU_RELEASE:-6.4}
 
 # Determine if setup is needed
 if [ ! -f "/usr/bin/apt" ]; then
@@ -15,10 +15,10 @@ if [ ! -f "/etc/apt/sources.list.d/kisak-mesa.list" ]; then
     echo "deb [signed-by=/usr/share/keyrings/kisak-mesa.gpg] http://ppa.launchpad.net/kisak/kisak-mesa/ubuntu ${DISTRIB_CODENAME} main" > /etc/apt/sources.list.d/kisak-mesa.list
 fi
 
-if [ ! -f "/etc/apt/sources.list.d/amdgpu-focal.list" ]; then
+if [ ! -f "/etc/apt/sources.list.d/amdgpu-noble.list" ]; then
     echo "**** Adding amdgpu repo ****"
     curl -fsSL https://repo.radeon.com/rocm/rocm.gpg.key | gpg --dearmor | tee /usr/share/keyrings/rocm.gpg >/dev/null
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/rocm.gpg] https://repo.radeon.com/rocm/apt/${AMDGPU_RELEASE} ubuntu main" > /etc/apt/sources.list.d/amdgpu-focal.list
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/rocm.gpg] https://repo.radeon.com/rocm/apt/${AMDGPU_RELEASE} ${DISTRIB_CODENAME} main" > /etc/apt/sources.list.d/amdgpu-noble.list
 fi
 
 
